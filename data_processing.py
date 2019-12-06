@@ -61,7 +61,7 @@ def get_training_data(intents_file_path):
             training_labels[i][tok_labels[i]-1] = 1
         
         with open('token_data.pickle','wb') as f:
-            pickle.dump((training_set, training_labels, word_count, max_sequence_len), f)
+            pickle.dump((padded_sequences, training_labels, word_count, max_sequence_len), f)
 
         with open('raw_data.pickle','wb') as f:
             pickle.dump((sentences, labels, sentences_y), f)

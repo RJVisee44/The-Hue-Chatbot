@@ -12,3 +12,5 @@ Data was collected from Kaggle: https://www.kaggle.com/kausr25/chatterbotenglish
 If you would like to train Hue on your own data: 
 1) Generate a `my_intents.json` file with the same format
 2) Run `train.py` and specify the absolute path to the my_intents.json file, the emb_dim (embedding dimension) for word embedding and the number of epochs (num_epochs) you'd like to train. If you would like to view training accuracy and loss after, set `show_training_results=True`. 
+
+e.g. `train('my_intents.json',emb_dim=256,num_epochs=50,show_training_results=True)`

@@ -13,7 +13,11 @@ def train(intents_file_path, emb_dim, num_epochs, train=True, show_training_resu
     
     training_set, training_labels, word_count, max_sequence_len = get_training_data(intents_file_path)
     
+<<<<<<< HEAD
+    model = build_model(word_count,emb_dim,max_sequence_len,len(training_labels[1]))
+=======
     model = build_model(word_count,emb_dim,max_sequence_len,len(training_labels))
+>>>>>>> b7b37c2e9daa27edbcf1e0c1730b2e4a8d779779
     
     model.compile(loss='categorical_crossentropy',optimizer='adam',metrics=["accuracy"])
     
@@ -47,4 +51,8 @@ def train(intents_file_path, emb_dim, num_epochs, train=True, show_training_resu
         
         plt.show()
         
+<<<<<<< HEAD
+#train('my_intents.json',256,50)
+=======
 train('my_intents.json',256,50)
+>>>>>>> b7b37c2e9daa27edbcf1e0c1730b2e4a8d779779

@@ -8,6 +8,8 @@ Hue is a simple chatbot that was created for fun. He currently isn't very smart,
 - [ ] Memory
 
 ## Chat with Hue
+Download GloVe pretrained word vectors from here: https://github.com/stanfordnlp/GloVe. I used the Wikipedia 2014 + Gigaword 5 pretrained model. 
+
 Run:
 
 `chat.py`

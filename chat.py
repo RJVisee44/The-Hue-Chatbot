@@ -10,10 +10,8 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 from data_processing import get_training_data
 from train import train
-<<<<<<< HEAD
+
 from similarity_scores import most_similar
-=======
->>>>>>> b7b37c2e9daa27edbcf1e0c1730b2e4a8d779779
 
 import numpy as np
 import pickle
@@ -26,11 +24,9 @@ def chat(intents_file_path):
         data = json.load(f)
     
     model = train(intents_file_path, 256, 50, train=False) 
-<<<<<<< HEAD
+
     model.load_weights('HueWeights.h5')
-=======
->>>>>>> b7b37c2e9daa27edbcf1e0c1730b2e4a8d779779
-    
+
     try:
         with open('raw_data.pickle','rb') as f:
             sentences, labels, sentences_y = pickle.load(f)        
@@ -43,8 +39,7 @@ def chat(intents_file_path):
             training_set, training_labels, word_count, max_sequence_len = pickle.load(f)
     except:
         training_set, training_labels, word_count, max_sequence_len = get_training_data(intents_file_path)
-    
-<<<<<<< HEAD
+
     tokenizer = Tokenizer(oov_token="<OOV>")
     tokenizer.fit_on_texts(sentences)
     
@@ -57,14 +52,7 @@ def chat(intents_file_path):
             embeddings_dict[word] = vector    
     
     print("Start talking with the bot (type quit to stop)!")
-    
-=======
-    print("Start talking with the bot (type quit to stop)!")
-    
-    tokenizer = Tokenizer(oov_token="<OOV>")
-    tokenizer.fit_on_texts(sentences)
-    
->>>>>>> b7b37c2e9daa27edbcf1e0c1730b2e4a8d779779
+
     while True:
         inp = input("You: ")
         if inp.lower() == "quit":
@@ -82,7 +70,7 @@ def chat(intents_file_path):
             if tg['tag'] == tag:
                 print(tag)
                 responses = tg['responses']
-<<<<<<< HEAD
+
                 patterns = tg['patterns']
         
         #Get best response
@@ -94,7 +82,4 @@ def chat(intents_file_path):
             print(responses[max_sim_ind[0]])
 
 chat('my_intents.json')     
-=======
-        
-        print(random.choice(responses))
->>>>>>> b7b37c2e9daa27edbcf1e0c1730b2e4a8d779779
+
